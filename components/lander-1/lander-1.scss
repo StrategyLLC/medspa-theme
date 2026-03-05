@@ -1,0 +1,43 @@
+/**
+ * Lander 1 Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-lander-1 {
+
+  .ll-lander-1__content {
+    padding-top: 3em;
+    padding-bottom: 6em;
+    transform: translateY(50%);
+    transition: all 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0
+  }
+
+}
+
+.ll-lander-1__image {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transform: translateY(50%);
+  transition: all 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 52%;
+  }
+}
+
+.ll-lander-1.is-visible {
+  .ll-lander-1__content,
+  .ll-lander-1__image {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

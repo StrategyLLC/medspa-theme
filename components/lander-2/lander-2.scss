@@ -1,0 +1,115 @@
+/**
+ * Lander 2 Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-lander-2 {
+  position: relative;
+  color: white;
+  z-index: 0;
+  height: 70vh;
+
+  .ll-lander-2__content-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &.text-center {
+      margin-top: 0;
+    }
+
+    &.is-tall {
+      position: relative;
+    }
+  }
+
+  &.is-bordered {
+    margin: 25px;
+    width: calc(100% - 50px);
+
+    .container {
+      width: calc(83% + 50px);
+    }
+
+    &::before {
+      height: calc(100vh - 50px);
+    }
+  }
+}
+
+.ll-lander-2__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &.is-pinned {
+    top: 0 !important;
+  }
+
+  &::after {
+    @extend %overlay;
+    background: linear-gradient(196.87deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.47) 100%);
+    z-index: -1;
+  }
+
+  .is-bordered & {
+
+    height: calc( 100vh - 50px );
+
+    &.is-pinned {
+      top: 25px !important;
+      left: 25px !important;
+      right: 25px !important;
+      bottom: 25px !important;
+      height: calc( 100vh - 50px );
+      width: calc( 100% - 50px );
+    }
+  }
+}
+
+.ll-lander-2__blocks {
+  padding-top: 6em;
+}
+
+.ll-lander-2__block {
+  position: relative;
+  border: 1px solid currentColor;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @include screen-nav-mobile {
+    margin-bottom: $grid-gutter-width;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 80%;
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

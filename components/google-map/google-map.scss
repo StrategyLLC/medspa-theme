@@ -1,0 +1,17 @@
+/**
+ * Google Map Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-google-map {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 50%;
+  }
+}

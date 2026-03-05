@@ -1,0 +1,42 @@
+{
+    "key": "group_5a32b531e7e94",
+    "title": "Location Coordinates",
+    "fields": [
+        {
+            "key": "field_5a32b53b7cdcd",
+            "label": "Coordinates",
+            "name": "coordinates",
+            "type": "google_map",
+            "instructions": "use this to set the map pin for this venue",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": "",
+            "height": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tribe_venue"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1513272673
+}

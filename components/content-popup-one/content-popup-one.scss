@@ -1,0 +1,46 @@
+/**
+ * Content Popup One Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-content-popup-one {
+  .row {
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+}
+
+.ll-content-popup-one__image {
+  padding-right: calc( (1 / 12) * 100% );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-origin: content-box;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: $imgSizeLg;
+  }
+
+  &.is-large {
+    &::before {
+      padding-top: $imgSizeLg;
+    }
+  }
+
+  &.is-md {
+    &::before {
+      padding-top: $imgSizeMd;
+    }
+  }
+
+  &.is-sm {
+    &::before {
+      padding-top: $imgSizeSm;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+/**
+ * Left Right Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-left-right {
+  .ll-left-right__content-col {
+    padding-right: calc( ( 100% / 12 ) );
+
+    @include screen-sm {
+      padding-right: 0;
+    }
+  }
+}
+
+.ll-left-right__image {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 140%;
+  }
+}
+
+.ll-left-right__image-col {
+  @include screen-sm {
+    margin-top: $grid-gutter-width;
+  }
+}
+
+.ll-left-right--image-first {
+  .ll-left-right__content-col {
+    order: 2;
+    padding-left: calc( ( 100% / 12 ) );
+    padding-right: 0;
+
+    @include screen-sm {
+      order: 1;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .ll-left-right__image-col {
+    order: 1;
+
+    @include screen-sm {
+      order: 2;
+    }
+  }
+
+}
+
+.ll-left-right.is-medium {
+  .ll-left-right__image {
+    &::before {
+      padding-top: 60%;
+    }
+  }
+}
+
+.ll-left-right.is-small {
+  .ll-left-right__image {
+    &::before {
+      padding-top: 40%;
+    }
+  }
+}
+
+.ll-left-right.is-contain {
+  .ll-left-right__image {
+    background-size: auto;
+  }
+}
+
+.ll-left-right--align-bottom,
+.ll-left-right--offset-bottom {
+  .row {
+    align-items: flex-end;
+  }
+}
+
+.ll-left-right--align-center {
+  .row {
+    align-items: center;
+  }
+}
+
+.ll-left-right--align-top,
+.ll-left-right--offset-top {
+  .row {
+    align-items: flex-start;
+  }
+}
+
+.ll-left-right--offset-bottom {
+  .ll-left-right__content-col {
+    margin-bottom: $grid-gutter-width*4;
+
+    @include screen-sm {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.ll-left-right--offset-top {
+  .ll-left-right__content-col {
+    margin-top: $grid-gutter-width*3;
+
+    @include screen-sm {
+      margin-top: 0;
+    }
+  }
+}
+
+.ll-left-right--background-top {
+  .ll-left-right__image {
+    background-position: center top;
+  }
+}
+
+.ll-left-right--background-bottom {
+  .ll-left-right__image {
+    background-position: center bottom;
+  }
+}

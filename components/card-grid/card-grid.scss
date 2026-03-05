@@ -1,0 +1,164 @@
+/**
+ * Card Grid Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-card-grid {
+
+  .row {
+    margin-top: calc( #{$grid-gutter-width} * -1 );
+    margin-bottom: calc( #{$grid-gutter-width} * -1 );
+  }
+
+  &.ll-card-grid--first {
+
+    .row {
+      margin-top: calc( #{$grid-gutter-width}/2 * -1 );
+    }
+  }
+
+  &.ll-card-grid--last {
+    .row {
+      margin-bottom: calc( #{$grid-gutter-width}/2 * -1 );
+    }
+  }
+
+  [class*="col"] {
+    margin-top: $grid-gutter-width/2;
+    margin-bottom: $grid-gutter-width/2;
+  }
+
+}
+
+.ll-card-grid--offset {
+  &.ll-card-grid--last {
+
+    &.spacing-bottom-none {
+      margin-bottom: calc( 100px + #{$grid-gutter-width} ) !important;
+
+      @include screen-sm {
+        margin-bottom: $grid-gutter-width !important;
+      }
+    }
+
+    &.spacing-bottom-small {
+      margin-bottom: calc( 100px + 6.25em ) !important;
+
+      @include screen-sm {
+        margin-bottom: 6.25em !important;
+      }
+    }
+
+    &.spacing-bottom-medium {
+      margin-bottom: calc( 100px + 9.375em ) !important;
+
+      @include screen-sm {
+        margin-bottom: 9.375em !important;
+      }
+    }
+
+    &.spacing-bottom-large {
+      margin-bottom: calc( 100px + 15.625em ) !important;
+
+      @include screen-sm {
+        margin-bottom: 15.625em !important;
+      }
+    }
+
+    .row {
+      margin-bottom: calc( #{$grid-gutter-width}/2 * -1  + 100px);
+
+      @include screen-sm {
+        margin-bottom: calc( #{$grid-gutter-width}/2 * -1);
+      }
+    }
+  }
+  [class*="col"]:nth-child(3n - 1) {
+    transform: translateY(100px);
+
+    @include screen-sm {
+      transform: translateY(0);
+    }
+  }
+}
+
+.ll-card-grid__item__info {
+  position: relative;
+  text-align: center;
+  background-repeat: repeat;
+  transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    transform: translateY(50%);
+    width: 1px;
+    height: 131px;
+    background-color: currentColor;
+    z-index: 2;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.ll-card-grid__item {
+  position: relative;
+
+  &:hover {
+
+    .ll-card-grid__item__overlay.has-hover {
+      background-color: $secondary-color !important;
+    }
+  }
+}
+
+.ll-card-grid__item__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: #f5f5f5;
+
+  &.has-hover {
+    transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+.ll-card-grid__item__info__content {
+  position: absolute;
+  top: 50%;
+  left: $grid-gutter-width;
+  right: $grid-gutter-width;
+  transform: translate3d(0,-50%, 0);
+  z-index: 2;
+}
+
+.ll-card-grid__item__image {
+  padding-top: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.ll-card-grid__item__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}

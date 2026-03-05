@@ -1,0 +1,17 @@
+/**
+ * Four Column Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-four-column {
+
+  [class*="col"]:not(:last-of-type) {
+    @include screen-sm {
+      margin-bottom: $grid-gutter-width;
+    }
+  }
+
+}

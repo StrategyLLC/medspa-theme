@@ -1,0 +1,31 @@
+/**
+ * Import main.min.css for front styling of
+ * the wysiwyg
+ */
+@import 'main.min.css';
+html,
+body {
+  background-image: none;
+}
+
+body,
+body.wp-autoresize {
+  padding: 25px !important;
+}
+
+body.is-dark {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+body.footer {
+  padding: 25px !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc( ( 100% / 12 * 4 ) );
+  min-width: 320px;
+}
+
+.button.is-video::before  {
+  background-image: url('../img/play-circle-dark.svg');
+}

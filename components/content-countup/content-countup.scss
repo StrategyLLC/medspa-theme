@@ -1,0 +1,28 @@
+/**
+ * content countup Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-content-countup {
+  position: relative;
+  background-color: $blue;
+  padding: 6em 0;
+}
+
+.ll-content-countup__container {
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.ll-content-countup__content-container {
+  color: $white;
+  text-align: center;
+}
+
+.countup-number-flex {
+  display: flex;
+  justify-content: center;
+}

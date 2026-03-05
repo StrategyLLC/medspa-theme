@@ -1,0 +1,100 @@
+{
+    "key": "group_5a033677b73a9",
+    "title": "Spacing Options",
+    "fields": [
+        {
+            "key": "field_5a03367ca7a2a",
+            "label": "Spacing Options",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5a033689a7a2b",
+            "label": "Top Spacing",
+            "name": "top_spacing",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "spacing-top-none": "none",
+                "spacing-top-small": "small",
+                "spacing-top-medium": "medium",
+                "spacing-top-large": "large",
+                "spacing-top-zero": "Zero"
+            },
+            "default_value": [
+                "spacing-top-none"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a03369aa7a2c",
+            "label": "Bottom Spacing",
+            "name": "bottom_spacing",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "spacing-bottom-none": "none",
+                "spacing-bottom-small": "small",
+                "spacing-bottom-medium": "medium",
+                "spacing-bottom-large": "large",
+                "spacing-bottom-zero": "Zero"
+            },
+            "default_value": [
+                "spacing-bottom-none"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1513106645
+}

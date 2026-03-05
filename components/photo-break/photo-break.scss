@@ -1,0 +1,45 @@
+/**
+ * Photo Break Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-photo-break__image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &::before {
+    content: '';
+    display: block;
+  }
+}
+
+.ll-photo-break.is-small .ll-photo-break__image {
+  &::before {
+    padding-top: 25%;
+  }
+}
+
+.ll-photo-break.is-medium .ll-photo-break__image {
+  &::before {
+    padding-top: 40%;
+  }
+}
+
+.ll-photo-break.is-large .ll-photo-break__image {
+  &::before {
+    padding-top: 50%;
+  }
+}
+
+.ll-photo-break.is-bordered {
+    margin: 25px;
+    width: calc(100% - 50px);
+
+    &.is-small.ll-photo-break__image {
+
+    }
+}

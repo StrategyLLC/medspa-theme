@@ -1,0 +1,93 @@
+{
+    "key": "group_59bb3c0522dcd",
+    "title": "Quoter",
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-quoter-icons"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "fields": [
+        {
+            "key": "field_59bb3cba00c41",
+            "label": "Icon Group",
+            "name": "icon_groups",
+            "type": "flexible_content",
+            "instructions": "Each new group must correspond with a set of checkbox inputs. Correlate them by using the icon-group-{index} class on the checkbox input",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": [
+                {
+                    "key": "59bb3ccd703ac",
+                    "name": "icon_group",
+                    "label": "Icon Group",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_59bb55646de94",
+                            "label": "Icons",
+                            "name": "icons",
+                            "type": "repeater",
+                            "instructions": "must paste in svg code",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "sub_fields": [
+                                {
+                                    "key": "field_59bb570bf6d9b",
+                                    "label": "icon",
+                                    "name": "icon",
+                                    "type": "textarea",
+                                    "instructions": "must paste in svg code",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "new_lines": "",
+                                    "maxlength": "",
+                                    "placeholder": "<svg><\/svg>",
+                                    "rows": 3
+                                }
+                            ],
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "Add Icon",
+                            "collapsed": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ],
+            "min": "",
+            "max": "",
+            "button_label": "Add Icon Group"
+        }
+    ],
+    "modified": 1513278084
+}
