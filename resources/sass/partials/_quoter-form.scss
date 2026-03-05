@@ -1,0 +1,553 @@
+/**
+ * Quoter Form Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-quoter-form {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 0;
+
+
+  .ll-quoter-form__form {
+    padding: 4em;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #F1F1F1;
+    box-shadow: 2px 2px 6px 0px rgba($black,0.5);
+  }
+
+  .gf_progressbar_wrapper {
+    display: none;
+  }
+
+  /*
+   * Section Titles
+   */
+
+  .gsection_title {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-top: 1em;
+    color: $primary-color;
+  }
+
+  .gsection-large-title {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+
+  .gsection-center-title {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+
+  /*
+   * GField
+   */
+
+  .gfield {
+    position: relative;
+    top: 0;
+
+    select {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $white;
+      border: 0;
+      outline: 0;
+      font-size: 0.9em;
+      padding: 0.5em 0.75em;
+      color: inherit;
+      appearance: none;
+      background-image: url('../img/svg/chevron-down.svg');
+      background-repeat: no-repeat;
+      background-position: 98% center;
+      transition: 0.15s ease-in-out;
+
+      &::-ms-expand {
+        display: none;
+      }
+
+    }
+  }
+
+  .gfield:not(.gfield-block):not(.gfield-column-block):not(.gfield-icon-checkboxes):not(.gfield-checkbox-group):not(.gfield-radio-group):not(.gsection) {
+    label {
+      position: absolute;
+      top: 0.5em;
+      left: 1em;
+      font-size: 0.9em;
+      font-weight: bold;
+      color: inherit;
+    }
+  }
+
+  /*
+   * GField Widths
+   */
+
+  .gfield-1of2 {
+    display: inline-block;
+    width: calc( 50% - 0.25em );
+
+    @include screen-sm {
+      width: 100%;
+    }
+
+    &.gfield-1of2--left {
+      margin-right: 0.25em;
+
+      @include screen-sm {
+        margin-right: 0;
+      }
+    }
+
+    &.gfield-1of2--right {
+      margin-left: 0.25em;
+
+      @include screen-sm {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .gfield-1of3 {
+    display: inline-block;
+    width: 33.3%;
+
+    @include screen-sm {
+      width: 50%;
+    }
+
+    &:first-of-type {
+      border: 5px solid red;
+    }
+
+    &.gfield-1of3--left {
+      width: calc(33.3% - 0.25em);
+      margin-right: 0.25em;
+
+      @include screen-sm {
+        width: 100%;
+        margin: 0 0 0.75em;
+      }
+    }
+
+    &.gfield-1of3--right {
+      width: calc(33.3% - 0.25em);
+      margin-left: 0.25em;
+
+      @include screen-sm {
+        width: 100%;
+        margin: 0 0 0.75em;
+      }
+    }
+
+    &.gfield-1of3--center {
+      width: calc(33.3% - 0.5em);
+      margin: 0 0.25em;
+
+      @include screen-sm {
+        width: 100%;
+        margin: 0 0 0.75em;
+      }
+    }
+
+    &.gfield-1of3--first {
+      width: calc(33.3% - 0.5em);
+      margin-right: 0.5em;
+
+      @include screen-sm {
+        width: 100%;
+        margin: 0 0 0.75em;
+      }
+
+      label {
+        opacity: 0;
+      }
+
+      select {
+        background-color: transparent;
+      }
+
+    }
+
+  }
+
+  .gfield-2of3 {
+    display: inline-block;
+    width: 66.6%;
+
+    @include screen-sm {
+      width: 100%;
+    }
+
+    label {
+      opacity: 0;
+    }
+
+    select {
+      background-color: transparent !important;
+    }
+  }
+
+  /*
+   * Checkbox Group
+   */
+
+  .gfield-checkbox-group,
+  .gfield-icon-checkboxes,
+  .gfield-radio-group:not(.gfield-radio-descriptions) {
+    .gfield_label {
+      font-size: 1.25em;
+      font-weight: bold;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      color: $primary-color;
+      display: block;
+    }
+  }
+
+  .gfield-checkbox-group .gfield_checkbox,
+  .gfield-radio-group:not(.gfield-radio-descriptions) .gfield_radio {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 0 -0.25em 1.5em;
+
+    li {
+      flex: 1 1 auto;
+      list-style: none;
+      margin: 0 0.25em;
+
+      @include screen-sm {
+        width: 100%;
+        flex: 0 0 auto;
+        margin: 0 0 0.75em;
+      }
+    }
+
+    input {
+      display: none;
+    }
+
+    label {
+      display: block;
+      padding: 0.75em 0.5em;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2em;
+      color: inherit;
+
+      position: relative;
+      top: 0;
+      background-color: $white;
+      box-shadow: 2px 2px 4px -1px rgba(#000,0.5);
+      transition: 0.15s ease-in-out;
+      cursor: hand;
+      cursor: pointer;
+
+    }
+
+    input:checked ~ label {
+      box-shadow: none;
+      background-color: #EBEBEB;
+    }
+  }
+
+  .gfield-radio-descriptions {
+    .gfield_label {
+      font-size: 1.25em;
+      font-weight: bold;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      color: $primary-color;
+      display: block;
+    }
+
+    .gfield_radio {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin: 0 -0.25em 1.5em;
+
+      li {
+        flex: 1 1 auto;
+        list-style: none;
+        margin: 0 0.25em;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.8em;
+
+        @include screen-sm {
+          width: 100%;
+          flex: 0 0 auto;
+          margin: 0 0 0.75em;
+        }
+      }
+
+      input {
+        display: none;
+      }
+
+      label {
+        @extend .button;
+        @extend .is-solid;
+        display: block;
+        font-size: 1em;
+        background-color: white;
+        color: #000;
+        box-shadow: 2px 2px 4px -1px rgba(#000,0.5);
+
+        &::before {
+          background-color: #EBEBEB;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      input:checked ~ label {
+        box-shadow: none;
+        background-color: #EBEBEB;
+      }
+    }
+  }
+
+  /*
+   * GField Blocks
+   */
+
+  .gfield-block,
+  .gfield-column-block {
+    position: relative;
+    top: 0;
+    padding: 1em 0.5em;
+    background-color: $white;
+    box-shadow: 2px 2px 4px -1px rgba(#000,0.5);
+    transition: 0.5s ease-in-out;
+
+    &.has-value {
+      box-shadow: none;
+      background-color: #EBEBEB;
+    }
+  }
+
+  .gfield-column-block {
+    position: relative;
+    top: 0;
+    background-color: #f5f5f5;;
+    padding: 0;
+    transition: 0.15s ease-in-out;
+
+    label {
+      display: block;
+      background-repeat: no-repeat;
+      background-size: 2.5em;
+      background-position: 15% center;
+      padding: 1.5em 0.5em 1.5em 50%;
+      font-size: 1.25em;
+      color: inherit;
+
+      @include screen-md {
+        font-size: 1.15em;
+        padding-left: 40%;
+        background-position: 10% center;
+      }
+
+      @include screen-md {
+        font-size: 1.25em;
+        padding-left: 50%;
+        background-position: 15% center;
+      }
+    }
+
+    .ginput_container {
+      padding-left: 1em;
+      background-color: $white;
+      overflow: hidden;
+    }
+
+    select {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      padding: 0.75em 0.5em;
+    }
+
+    &.gfield--bedroom {
+      label {
+        background-image: url('../img/svg/bedroom.svg');
+      }
+    }
+
+    &.gfield--bathroom {
+      label {
+        background-image: url('../img/svg/bathroom.svg');
+      }
+    }
+
+    &.gfield--sqft {
+      label {
+        background-image: url('../img/svg/sqft.svg');
+      }
+    }
+
+  }
+
+
+
+  .gfield-icon-checkboxes {
+    display: block;
+    position: relative;
+    top: 0;
+    padding: 0;
+    margin-bottom: 1.5em;
+    transition: 0.15s ease-in-out;
+
+    .gfield_checkbox {
+      margin: 0;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+
+      li {
+        flex: 0 0 auto;
+        width: calc(33.3% - 0.5em);
+        margin-bottom: 1em;
+        list-style: none;
+
+        @include screen-sm {
+          width: 100%;
+        }
+      }
+
+      input:checked ~ label {
+        box-shadow: none;
+        background-color: #EBEBEB;
+      }
+
+      label {
+        display: block;
+        background-repeat: no-repeat;
+        background-size: 2.5em;
+        background-position: 15% center;
+        font-size: 1.25em;
+        color: inherit;
+        box-shadow: 2px 2px 4px -1px rgba(#000,0.5);
+        background-color: $white;
+        padding-bottom: 1em;
+        overflow: hidden;
+        cursor: hand;
+        cursor: pointer;
+        transition: 0.15s ease-in-out;
+
+      }
+
+      .svg-wrapper {
+        max-width: 100px;
+        display: block;
+        padding: 1.5em 1em 1em;
+        margin: 0 auto;
+      }
+
+
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  /*
+   * Inputs
+   */
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    background-color: $white;
+    box-shadow: 2px 2px 4px -1px rgba(#000,0.5);
+    padding: 2em 1em 0.75em;
+    -webkit-appearance: none;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  button.button.is-solid {
+    font-size: 1.15em;
+    background-color: white;
+    color: $text-dark;
+    box-shadow: 2px 2px 4px -1px rgba(#000,0.5);
+
+    &::before {
+      background-color: #EBEBEB;
+    }
+  }
+
+  /*
+   * Errors
+   */
+
+  .validation_message {
+    display: none;
+  }
+
+  .gfield_error:not(.gfield-checkbox-group):not(.gfield-radio-group):not(.gfield-icon-checkboxes) {
+    border: 2px solid #a94442;
+  }
+
+  .gfield_error.gfield-checkbox-group .gfield_label,
+  .gfield_error.gfield-radio-group .gfield_label,
+  .gfield_error.gfield-icon-checkboxes .gfield_label {
+    color: #a94442;
+  }
+
+  /*
+   Etc.
+   */
+
+  .gform-form-page {
+    .gfield:not(.gsection) {
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto 15px;
+    }
+  }
+
+  .gform_footer,
+  .gform_page_footer {
+    margin-top: 2em;
+    text-align: center;
+  }
+
+  .gform_previous_button {
+    display: none !important;
+  }
+
+
+}

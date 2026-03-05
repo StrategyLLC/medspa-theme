@@ -1,0 +1,164 @@
+/**
+ *
+ * Grid styles
+ *
+ *
+ */
+
+.container {
+  position: relative;
+  @include container-fixed;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    // width: $container-lg;
+    width: 83%;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$grid-gutter-width/2;
+  margin-right: -$grid-gutter-width/2;
+}
+
+.row-justify-center {
+  justify-content: center;
+}
+
+.row-justify-end {
+  justify-content: flex-end;
+}
+
+.row-justify-start {
+  justify-content: flex-start;
+}
+
+.row-justify-between {
+  justify-content: space-between;
+}
+
+.row-justify-around {
+  justify-content: space-around;
+}
+
+.row-align-start {
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.row-align-end {
+  align-items: flex-end;
+  align-content: flex-end;
+}
+
+.row-align-center {
+  align-items: center;
+  align-content: center;
+}
+
+.row [class*=col-] {
+  flex: 0 0 auto;
+}
+
+.row-offset {
+  padding-left: calc( ( 100% / 12 ) );
+  padding-right: calc( ( 100% / 12 ) );
+}
+
+.row-wide-gutter {
+  [class*="col"] {
+    padding-right: (100%/12);
+  }
+}
+
+.col-full {
+  margin-left: $grid-gutter-width/2;
+  margin-right: $grid-gutter-width/2;
+  width: calc( 100% - #{$grid-gutter-width} );
+}
+
+@for $i from 2 through 12 {
+
+  @for $j from 1 through ($i - 1) {
+
+    .col-#{$j}of#{$i} {
+      width: calc( ( 100% / #{$i} * #{$j} ) - #{$grid-gutter-width} );
+      margin-left: $grid-gutter-width/2;
+      margin-right: $grid-gutter-width/2;
+    }
+
+    .col-xl-#{$j}of#{$i} {
+      width: calc( ( 100% / #{$i} * #{$j} ) - #{$grid-gutter-width} );
+      margin-left: $grid-gutter-width/2;
+      margin-right: $grid-gutter-width/2;
+
+      @include screen-xl {
+        width: calc( 100% - #{$grid-gutter-width} );
+      }
+    }
+
+    .col-lg-#{$j}of#{$i} {
+      width: calc( ( 100% / #{$i} * #{$j} ) - #{$grid-gutter-width} );
+      margin-left: $grid-gutter-width/2;
+      margin-right: $grid-gutter-width/2;
+
+      @include screen-lg {
+        width: calc( 100% - #{$grid-gutter-width} );
+      }
+    }
+
+    .col-md-#{$j}of#{$i} {
+      width: calc( ( 100% / #{$i} * #{$j} ) - #{$grid-gutter-width} );
+      margin-left: $grid-gutter-width/2;
+      margin-right: $grid-gutter-width/2;
+
+      @include screen-md {
+        width: calc( 100% - #{$grid-gutter-width} );
+      }
+    }
+
+    .col-sm-#{$j}of#{$i} {
+      width: calc( ( 100% / #{$i} * #{$j} ) - #{$grid-gutter-width} );
+      margin-left: $grid-gutter-width/2;
+      margin-right: $grid-gutter-width/2;
+
+      @include screen-sm {
+        width: calc( 100% - #{$grid-gutter-width} );
+      }
+    }
+
+    .col-xs-#{$j}of#{$i} {
+      width: calc( ( 100% / #{$i} * #{$j} ) - #{$grid-gutter-width} );
+      margin-left: $grid-gutter-width/2;
+      margin-right: $grid-gutter-width/2;
+
+      @include screen-xs {
+        width: calc( 100% - #{$grid-gutter-width} );
+      }
+    }
+
+    .col-xxs-#{$j}of#{$i} {
+      width: calc( ( 100% / #{$i} * #{$j} ) - #{$grid-gutter-width} );
+      margin-left: $grid-gutter-width/2;
+      margin-right: $grid-gutter-width/2;
+
+      @include screen-xxs {
+        width: calc( 100% - #{$grid-gutter-width} );
+      }
+    }
+  }
+}
+
+@for $o from 1 through 12 {
+  .col-offset-1of#{$o} {
+    margin-left: calc( ( 100% / #{$o} ) + #{$grid-gutter-width}/2 );
+  }
+}

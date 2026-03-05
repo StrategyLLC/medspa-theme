@@ -1,0 +1,24 @@
+/**
+ * Modal Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+.content-popup {
+  position: relative;
+  width: 83%;
+  margin: 0 auto;
+
+  .modal {
+    width: 100%;
+  }
+}
+
+.modal {
+  padding: $grid-gutter-width*2 0;
+  width: 83%;
+  margin: 0 auto;
+  background-color: white;
+  color: $text-dark;
+}

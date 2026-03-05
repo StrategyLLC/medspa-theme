@@ -1,0 +1,237 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+  width: 100%;
+  color: white;
+  z-index: 100;
+  transition: all 0.15s ease-in-out;
+
+  &.is-white {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    color: $text-dark;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
+    transition: all 0.15s ease-in-out;
+
+    .logo-light {
+      display: none;
+    }
+
+    .logo-dark {
+      display: inline-block;
+    }
+  }
+
+  &.is-dark {
+    color: $text-dark;
+
+    .logo-light {
+      display: none;
+    }
+
+    .logo-dark {
+      display: inline-block;
+    }
+  }
+
+  .admin-bar & {
+    top: 32px;
+  }
+
+  .logo-light {
+    display: inline-block;
+  }
+
+  .logo-dark {
+    display: none;
+  }
+
+  .nav {
+    margin: 0;
+    list-style: none;
+  }
+
+  a {
+    color: currentColor;
+
+    &:hover {
+      color: currentColor;
+    }
+  }
+
+  .menu-item {
+    a {
+      display: inline-block;
+    }
+  }
+
+
+  .social-list {
+    position: absolute;
+    bottom: 0;
+    left: $grid-gutter-width;
+  }
+}
+
+.navbar-toggle {
+  display: none;
+  align-items: center;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+
+  @include screen-nav-mobile {
+    display: inline-block;
+  }
+
+  span {
+    display: inline-block;
+    pointer-events: none;
+  }
+}
+
+.navbar-toggle__text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.navbar-toggle__lines {
+  position: relative;
+  width: 20px;
+  height: 8px;
+
+  .navbar-toggle.open &,
+  .navbar-toggle.collapsed & {
+    &::before {
+      transform: rotate(45deg) translate3d(4px, 0, 0);
+    }
+
+    &::after {
+      transform: rotate(-45deg) translate3d(4px, 0, 0);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 2px;
+    width: 20px;
+    background-color: white;
+    transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    .is-white &,
+    .is-dark & {
+      background-color: #4A4A4A;
+    }
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+
+.nav-logo-wrapper {
+  display: inline-block;
+  text-align: center;
+}
+
+.nav-logo {
+  display: inline-block;
+  line-height: 1;
+
+  img {
+    max-width: 13em;
+  }
+}
+
+.nav-link {
+  color: currentColor;
+  font-weight: 500;
+  font-size: 0.875em;
+}
+
+#wpadminbar {
+  @include screen-sm {
+    position: fixed;
+  }
+}
+
+.mobile-logos {
+  line-height: 1;
+}
+
+.navbar.is-mobile {
+
+
+  & > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .mobile-logos {
+    display: block;
+  }
+
+  .primary-nav {
+    flex: 1 1 100%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    color: $text-dark;
+    overflow-y: auto;
+
+
+    .nav-logo {
+      display: none;
+    }
+  }
+
+  .nav {
+    display: block;
+    padding: 2em 0;
+    text-align: center;
+
+
+    li {
+      margin-bottom: 1em;
+    }
+
+    .menu-item {
+      a {
+        padding: 0;
+      }
+    }
+
+    .nav-logo {
+      margin-right: auto;
+    }
+  }
+
+  .end-link {
+    position: relative;
+
+    &::before {
+      display: none;
+    }
+
+  }
+}

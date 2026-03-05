@@ -1,0 +1,44 @@
+/**
+ * vac Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.vac {
+
+}
+
+.vac::after {
+  width: 1px;
+}
+
+.vac__nav__item {
+  font-size: 1em;
+  line-height: 1;
+
+  &.is-small {
+    padding: 0.5em 1em;
+  }
+}
+
+.vac__content__wrapper {
+  font-size: 1em;
+}
+
+.vac__content__title::after {
+  display: none;
+}
+
+h4.vac__results__title {
+  @extend .h4;
+}
+
+h5.vac__results__title {
+  @extend .h5;
+}
+
+.vac__form-popup {
+  max-width: 83%;
+}

@@ -1,0 +1,159 @@
+/**
+ * Hover Styles Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+.hover-image {
+  position: relative;
+  overflow: hidden;
+  color: white;
+
+  .hover-image__img,
+  .hover-image__img-alt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .hover-image__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: calc(100% - 50px);
+    transform: translate3d(-50%, 0, 0);
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+
+    .always-show & {
+      opacity: 1 !important;
+    }
+  }
+
+  &.has-button .hover-image__text {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0);
+    transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+.hover-image.has-button {
+
+}
+
+.hover-image__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.hover-image:hover {
+  .hover-image__text {
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 1;
+  }
+
+  .button.is-solid {
+    &::before {
+      transform-origin: left center;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .button.is-ghost {
+    color: $white;
+    border-color: $primary-color;
+    background-color: $primary-color;
+  }
+}
+
+.hover-image__text {
+  margin: 0;
+  text-align: center;
+}
+
+/*
+ * Image Switch
+ */
+.hover-image.image-switch {
+
+  .hover-image__img,
+  .hover-image__img-alt {
+    transition: opacity 0.15s ease-in-out;
+  }
+
+  .hover-image__img-alt {
+    opacity: 0;
+  }
+}
+
+.hover-image.image-switch:hover {
+  .hover-image__img {
+    opacity: 0;
+  }
+
+  .hover-image__img-alt {
+    opacity: 1;
+  }
+}
+
+/*
+ * Animated Box
+ */
+.hover-image.animated-box {
+
+  .hover-image__img {
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      border: 2px solid white;
+      transition: all 0.25s ease-in-out;
+    }
+  }
+}
+
+.hover-image.animated-box:hover {
+
+  .hover-image__img {
+    &::before {
+      top: 25px;
+      left: 25px;
+      right: 25px;
+      bottom: 25px;
+      opacity: 1;
+    }
+  }
+}
+
+/*
+ * Image Zoom
+ */
+.hover-image.image-zoom {
+
+  .hover-image__img {
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center center;
+  }
+}
+
+.hover-image.image-zoom:hover {
+
+  .hover-image__img {
+    transform: scale(1.05);
+  }
+}

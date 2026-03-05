@@ -1,0 +1,112 @@
+/**
+ * Full Nav Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.full-nav {
+
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  .navbar-toggle,
+  .nav-logo,
+  .nav-link {
+    z-index: 101;
+  }
+
+  .nav {
+    position: relative;
+    flex: 0 0 auto;
+    display: block;
+    width: calc( ( 4 / 12 ) * 100% );
+
+    @include screen-sm {
+      width: 100%;
+    }
+
+    & > .menu-item {
+      font-size: 1.25em;
+    }
+
+  }
+
+  .menu-item:not(.nav-logo),
+  .sub-menu li {
+    & > a {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: currentColor;
+        z-index: -1;
+        pointer-events: none;
+        transform-origin: right center;
+        transform: scale3d(0, 1, 1);
+        transition: background-color 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      &:hover, &.collapsed {
+
+        &::after {
+          transform-origin: left center;
+          transform: scale3d(1, 1, 1);
+        }
+      }
+    }
+
+  }
+
+  .menu-item {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    font-weight: 300;
+
+    &:nth-child(1) {
+      transition-delay: 0.3s;
+    }
+    &:nth-child(2) {
+      transition-delay: 0.34s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.38s;
+    }
+    &:nth-child(4) {
+      transition-delay: 0.42s;
+    }
+    &:nth-child(5) {
+      transition-delay: 0.46s;
+    }
+    &:nth-child(6) {
+      transition-delay: 0.50s;
+    }
+    &:nth-child(7) {
+      transition-delay: 0.54s;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.5em;
+    }
+
+    a {
+      padding: 0;
+    }
+  }
+
+  .social-list {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    transition-delay: 0.3s;
+  }
+
+}

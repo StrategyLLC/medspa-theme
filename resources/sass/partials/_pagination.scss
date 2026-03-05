@@ -1,0 +1,114 @@
+/**
+ * Pagination Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.pagination {
+
+  ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: none;
+    list-style: none;
+  }
+
+  li:not(.pagination-prev):not(.pagination-next) {
+    flex: 0 0 auto;
+    @extend .h1;
+    margin: 0;
+    padding: 0 1em;
+    border-right: 1px solid currentColor;
+
+    &.active, &:not(.pagination-more):hover {
+      font-weight: 700;
+    }
+
+    a {
+      display: inline-block;
+      margin: 0;
+      color: currentColor;
+    }
+  }
+
+  li:last-child:not(.pagination-next),
+  li.last {
+    border-right: none;
+  }
+
+  li.pagination-prev,
+  li.pagination-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    border-right: none;
+
+    @include screen-sm {
+      display: none;
+    }
+
+    a {
+      color: currentColor;
+    }
+  }
+
+  li.pagination-prev {
+    left: 0;
+    @extend .h5;
+    margin: 0;
+
+    &:hover {
+
+      &::after {
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 1em);
+      transform: translate3d(0,-50%,0);
+      height: 1px;
+      width: 122px;
+      background-color: currentColor;
+      backface-visibility: hidden;
+      transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
+
+  li.pagination-next {
+    right: 0;
+    @extend .h5;
+    margin: 0;
+
+    &:hover {
+
+      &::before {
+        right: 0;
+        width: 100%;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 1em);
+      transform: translate3d(0,-50%,0);
+      height: 1px;
+      width: 122px;
+      background-color: currentColor;
+      backface-visibility: hidden;
+      transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    }
+  }
+}

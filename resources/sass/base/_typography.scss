@@ -1,0 +1,191 @@
+/**
+ * Typography
+ */
+
+// Sans serif classes
+%sans-serif {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-hover-decoration;
+  transition: all 0.10s ease-in-out;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+button {
+  transition: all 0.10s ease-in-out;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code {
+  white-space: normal;
+}
+
+blockquote,
+.blockquote {
+  margin: 1em 0;
+  max-width: 14.48em;
+  font-size: 2.875em;
+  font-weight: 100;
+  line-height: 1.26;
+  letter-spacing: normal;
+}
+
+.contain-text {
+  p,
+  .p {
+    max-width: 27.85em;
+  }
+}
+
+p, .p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: inherit;
+}
+
+p.space-h1::before,
+p.space-h2::before,
+p.space-h3::before,
+p.space-h4::before,
+p.space-h5::before,
+p.space-h6::before {
+  content: attr(data-text);
+  display: block;
+  margin-top: 0 !important;
+  visibility: hidden;
+
+  @include screen-sm {
+    display: none !important;
+  }
+}
+
+h1,.h1, h2, .h2, h3,.h3, h4, .h4, h5, .h5, h6, .h6,
+p.space-h1::before, p.space-h2::before, p.space-h3::before,
+p.space-h4::before, p.space-h5::before, p.space-h6::before {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.2;
+
+  & + p {
+    margin-top: 0;
+  }
+}
+
+h1,
+.h1,
+p.space-h1::before {
+  margin-top: 0.5em;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.625;
+  letter-spacing: normal;
+}
+
+h1,
+.h1 {
+  margin-bottom: 0.5em;
+}
+
+h2,
+.h2,
+p.space-h2::before {
+  font-size: 2.875em;
+  font-weight: 100;
+  line-height: 1.26;
+  letter-spacing: normal;
+}
+
+h3,
+.h3,
+p.space-h3::before {
+  font-size: 1.875em;
+  font-weight: 300;
+  line-height: 1.333;
+  letter-spacing: normal;
+}
+
+h4,
+.h4,
+p.space-h4::before {
+  font-size: 1.25em;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+h5,
+.h5,
+p.space-h5::before {
+  font-size: 0.875em;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 2.14e;
+  letter-spacing: 0.428em;
+}
+
+h6,
+.h6,
+p.space-h6::before {
+  margin-top: 0.5em;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.625;
+  letter-spacing: normal;
+}
+
+h6,
+.h6 {
+  margin-bottom: 0.5em;
+
+  @include screen-sm {
+    font-size: 3.25em !important;
+  }
+}
+
+.text-is-small {
+  font-size: 0.875em;
+  font-weight: 300;
+  line-height: 1.57;
+  letter-spacing: normal;
+}
+
+.text-is-large {
+  font-size: 1.25em;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+.wysiwyg {
+  *:first-child {
+    margin-top: 0;
+  }
+
+  &:not(.keep-bottom) *:last-child {
+    margin-bottom: 0;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  ul,
+  ol {
+    margin-left: 1.25em;
+  }
+
+  a {
+    color: inherit;
+  }
+}

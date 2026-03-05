@@ -1,0 +1,107 @@
+/**
+ * Base styles
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: auto !important;
+  position: relative;
+  min-height: 100%;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // background-image: url( '../img/pattern.jpg' );
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+body {
+  background-color: white;
+  @extend %sans-serif;
+  color: $text-dark;
+  @include font-size(16);
+  font-weight: 300;
+  line-height: 1.625;
+
+  @media screen and ( min-width: $screen-xl ) {
+    font-size: 20px !important;
+    font-size: 2rem !important;
+  }
+
+  @include screen-nav-mobile {
+    @include font-size( 16 );
+    // background-image: url( '../img/pattern.jpg' );
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
+  &.locked {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+
+  /**
+   * Set after content to use for easily checking
+   * mobile or desktop state. Hidden from view and
+   * screen readers because it's purely for javascript.
+   * Check app.js for more info
+   */
+  &::after {
+    content: 'desktop';
+    display: none;
+
+    @include screen-nav-mobile {
+      content: 'mobile';
+    }
+  }
+}
+
+strong {
+  font-weight: 500;
+}
+
+.wrap {
+  // margin-top: 134px;
+}
+
+.main {
+  min-height: 100vh;
+  background-color: white;
+  // background-image: url( '../img/pattern.jpg' );
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+::selection {
+  text-shadow: none;
+  color: $selection;
+  background: $selection-bg;
+}
+
+::-moz-selection {
+  text-shadow: none;
+  color: $selection;
+  background: $selection-bg;
+}
+
+#grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  pointer-events: none;
+
+  .container,
+  .row {
+    height: 100%;
+  }
+
+  [class*="col"] {
+    background-color: rgba(tomato, 0.3);
+  }
+}
